@@ -1,2 +1,2 @@
-# CodingBait-Java
-2nd Exercise from CodingBait
+# CodingBat-Java
+2nd Exercise from CodingBat
