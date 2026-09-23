@@ -5,6 +5,8 @@ Given an int n, return the absolute difference between n and 21, except return d
 diff21(19) → 2
 diff21(10) → 11
 diff21(21) → 0
+diff21(25) → 8
+diff21(30) → 18
 
 Answer 
 
