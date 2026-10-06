@@ -7,6 +7,8 @@
  */
 public class Diff21Test {
 
+    private static int failures = 0;
+
     public static void main(String[] args) {
         Exercise1 e = new Exercise1();
         assertEq(e.diff21(19), 2, "diff21(19)");
@@ -14,12 +16,21 @@ public class Diff21Test {
         assertEq(e.diff21(21), 0, "diff21(21) boundary");
         assertEq(e.diff21(25), 8, "diff21(25)");
         assertEq(e.diff21(30), 18, "diff21(30)");
+        if (failures > 0) {
+            System.out.println(failures + " diff21 check(s) failed.");
+            System.exit(1);
+        }
         System.out.println("All diff21 checks passed.");
     }
 
     private static void assertEq(int actual, int expected, String label) {
+        // Count failures instead of throwing: one bad case should not hide
+        // the results of the remaining checks.
         if (actual != expected) {
-            throw new AssertionError(label + ": expected " + expected + " but got " + actual);
+            System.out.println("FAIL " + label + ": expected " + expected + " but got " + actual);
+            failures++;
+        } else {
+            System.out.println("PASS " + label);
         }
     }
 }
