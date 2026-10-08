@@ -2,7 +2,7 @@
  * Simple verification runner for {@code Exercise1.diff21} (CodingBat Warmup-1).
  *
  * <p>Covers the example calls documented in the README, including the
- * boundary case {@code n == 21}. Compile and run with:
+ * boundary case {@code n == 21}, plus negative input. Compile and run with:
  * {@code javac Exercise1.java Diff21Test.java && java Diff21Test}.
  */
 public class Diff21Test {
@@ -16,6 +16,7 @@ public class Diff21Test {
         assertEq(e.diff21(21), 0, "diff21(21) boundary");
         assertEq(e.diff21(25), 8, "diff21(25)");
         assertEq(e.diff21(30), 18, "diff21(30)");
+        assertEq(e.diff21(-5), 26, "diff21(-5) negative input");
         if (failures > 0) {
             System.out.println(failures + " diff21 check(s) failed.");
             System.exit(1);
